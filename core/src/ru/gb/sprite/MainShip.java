@@ -15,7 +15,7 @@ public class MainShip extends Ship {
     private static final float HEIGHT = 0.15f;
     private static final float BOTTOM_MARGIN = 0.05f;
     private static final int INVALID_POINTER = -1;
-    private static final int HP = 1;
+    private static final int HP = 100;
     private static final float RELOAD_INTERVAL = 0.2f;
 
     private boolean pressedLeft;
@@ -37,6 +37,17 @@ public class MainShip extends Ship {
         v0.set(0.5f, 0);
         hp = HP;
         reloadInterval = RELOAD_INTERVAL;
+    }
+
+    public void startNewGame() {
+        flushDestroy();
+        hp = HP;
+        this.pos.x = worldBounds.pos.x;
+        stop();
+        pressedLeft = false;
+        pressedRight = false;
+        leftPointer = INVALID_POINTER;
+        rightPointer = INVALID_POINTER;
     }
 
     @Override

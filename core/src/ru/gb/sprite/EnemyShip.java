@@ -58,11 +58,6 @@ public class EnemyShip extends Ship {
         setHeightProportion(height);
         this.hp = hp;
         v.set(startV);
-    }
-
-    @Override
-    public void destroy() {
-        super.destroy();
         reloadTimer = 0f;
     }
 
